@@ -266,8 +266,6 @@ MD5: class {
     write: func (b: UInt8*, length: UInt64) {
         dataLength += length
 
-        "datalength: %d" printfln(dataLength)
-
         startPos := 0
         if(remSize > 0){
             startPos = chunkSize - remSize >  length ? length : chunkSize - remSize
