@@ -5,7 +5,8 @@ mostly translated from [Go-lang](https://code.google.com/p/go/)
 
 ## MD5:
 
-    import crypo/md5
+	use crypo
+    import md5
 	a := "test string"
 	md5 := MD5 new()
 	md5 write(a toCString() as UInt8*, a size)
@@ -15,7 +16,8 @@ mostly translated from [Go-lang](https://code.google.com/p/go/)
 
 ## CRC32:
 
-    import crypo/crc32
+	use crypo
+	import crc32
 	a := "test string"
 	crc32 := crc32 new()
 	// crc32 makeTable(crc32 IEEE)
@@ -23,7 +25,9 @@ mostly translated from [Go-lang](https://code.google.com/p/go/)
 	"%.8x" printfln(crc32 checksum())
 
 ## SHA1: 
-    import crypo/sha1
+	
+	use crypo
+    import sha1
 	a := "test string"
 	m := SHA1 new()
 	m write(a toCString() as UInt8*, a size)
