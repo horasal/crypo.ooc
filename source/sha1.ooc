@@ -140,8 +140,14 @@ SHA1: class{
         } else {
             write(tmp data as UInt8*, 64 + 56 - dataLength%64)
         }
-        for(i in 0..8){
-            write((lengthinBit& as UInt8*)[7-i]&, 1)
+
+        bittest : UInt16 = 0x1001
+        if((bittest& as UInt8*)[0] == 0x01){
+            for(i in 0..8){
+                write((lengthinBit& as UInt8*)[7-i]&, 1)
+            }
+        } else {
+            write(lengthinBit& as UInt8*, 8)
         }
     }
 }
